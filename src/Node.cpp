@@ -1,20 +1,23 @@
-#include <array>
+#include <map>
 #include <string> 
+#include <vector>
 
 class Node {
 
 private: 
-    std::array<std::string> sets;
+    std::map<std::string, int8_t> sets;
     int8_t id; 
 
 public:
     
-    constexpr array* Setter(std::array<std::string> sets, int_8* ids) 
+    std::map<std::string,int8_t> Setter(std::map<std::string,int8_t> sets, std::vector<int8_t> ids) 
     {
-        for(auto id : ids)
+        int count = 1;
+        for(auto it = ids.begin(); it != ids.end(); it++)
         {
-            sets.push_back(id);
+            sets[std::to_string(count)] = *it;
+            count++;
         }
     }
 
-}
+};
